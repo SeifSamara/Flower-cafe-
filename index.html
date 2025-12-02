@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كافيه الرفاهية - Café Delight</title>
+    <title>Flower Cafe - كافيه الزهور</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #8B4513;
-            --secondary-color: #D2691E;
-            --light-color: #F5DEB3;
-            --dark-color: #3E2723;
-            --accent-color: #A0522D;
+            --primary-color: #FF69B4; /* زهري */
+            --secondary-color: #FFB6C1; /* زهري فاتح */
+            --light-color: #FFF0F5; /* زهري شاحب جداً */
+            --dark-color: #C71585; /* زهري غامق */
+            --accent-color: #DB7093; /* زهري متوسط */
             --text-color: #333;
             --light-text: #fff;
         }
@@ -27,7 +27,7 @@
         }
 
         body {
-            background-color: #f9f5f0;
+            background-color: var(--light-color);
             color: var(--text-color);
             line-height: 1.6;
         }
@@ -41,10 +41,10 @@
 
         /* Header Styles */
         header {
-            background-color: var(--dark-color);
-            color: var(--light-text);
-            padding: 1rem 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            color: var(--text-color);
+            padding: 0.5rem 0;
+            box-shadow: 0 4px 12px rgba(199, 21, 133, 0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -59,21 +59,22 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
 
-        .logo i {
-            font-size: 2.5rem;
-            color: var(--light-color);
+        .logo-img {
+            height: 60px;
+            width: auto;
         }
 
         .logo h1 {
             font-size: 1.8rem;
             font-weight: 700;
+            color: var(--dark-color);
         }
 
         .logo span {
-            color: var(--light-color);
+            color: var(--primary-color);
         }
 
         nav ul {
@@ -83,7 +84,7 @@
         }
 
         nav a {
-            color: var(--light-text);
+            color: var(--dark-color);
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
@@ -93,7 +94,7 @@
         }
 
         nav a:hover {
-            color: var(--light-color);
+            color: var(--primary-color);
         }
 
         nav a::after {
@@ -101,7 +102,7 @@
             position: absolute;
             width: 0;
             height: 3px;
-            background-color: var(--light-color);
+            background-color: var(--primary-color);
             bottom: 0;
             right: 0;
             transition: width 0.3s;
@@ -115,31 +116,31 @@
             display: none;
             background: none;
             border: none;
-            color: white;
+            color: var(--dark-color);
             font-size: 1.5rem;
             cursor: pointer;
         }
 
-        /* Hero Section */
+        /* Hero Section - تم إزالة الصورة الخارجية */
         .hero {
-            background: linear-gradient(rgba(62, 39, 35, 0.8), rgba(62, 39, 35, 0.9)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
-            background-size: cover;
-            background-position: center;
-            color: var(--light-text);
-            padding: 5rem 0;
+            background-color: var(--light-color);
+            color: var(--text-color);
+            padding: 3rem 0;
             text-align: center;
+            border-bottom: 3px solid var(--secondary-color);
         }
 
         .hero h2 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             margin-bottom: 1rem;
-            color: var(--light-color);
+            color: var(--dark-color);
         }
 
         .hero p {
             font-size: 1.3rem;
             max-width: 700px;
             margin: 0 auto 2rem;
+            color: #666;
         }
 
         .cta-button {
@@ -156,8 +157,8 @@
         }
 
         .cta-button:hover {
-            background-color: transparent;
-            border-color: var(--light-color);
+            background-color: var(--dark-color);
+            border-color: var(--dark-color);
         }
 
         /* Main Content Layout */
@@ -173,9 +174,9 @@
             flex: 1;
             min-width: 250px;
             background-color: white;
-            border-radius: 10px;
+            border-radius: 15px;
             padding: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.1);
             height: fit-content;
         }
 
@@ -183,8 +184,11 @@
             color: var(--dark-color);
             padding-bottom: 1rem;
             margin-bottom: 1rem;
-            border-bottom: 2px solid var(--light-color);
+            border-bottom: 2px solid var(--secondary-color);
             font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .categories {
@@ -204,17 +208,20 @@
             padding: 0.8rem;
             border-radius: 8px;
             transition: all 0.3s;
+            border: 1px solid transparent;
         }
 
         .categories a:hover {
             background-color: var(--light-color);
             color: var(--dark-color);
             transform: translateX(-5px);
+            border-color: var(--secondary-color);
         }
 
         .categories a.active {
-            background-color: var(--dark-color);
-            color: white;
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            border-color: var(--primary-color);
         }
 
         .categories i {
@@ -233,7 +240,7 @@
             font-size: 2rem;
             margin-bottom: 1.5rem;
             padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--light-color);
+            border-bottom: 3px solid var(--secondary-color);
             display: flex;
             align-items: center;
             gap: 10px;
@@ -251,15 +258,16 @@
 
         .product-card {
             background-color: white;
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.08);
             transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--light-color);
         }
 
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 30px rgba(219, 112, 147, 0.15);
         }
 
         .product-img {
@@ -267,6 +275,7 @@
             width: 100%;
             background-size: cover;
             background-position: center;
+            background-color: var(--light-color);
         }
 
         .product-content {
@@ -298,7 +307,7 @@
         }
 
         .add-to-cart {
-            background-color: var(--secondary-color);
+            background-color: var(--primary-color);
             color: white;
             border: none;
             padding: 0.5rem 1rem;
@@ -309,15 +318,16 @@
         }
 
         .add-to-cart:hover {
-            background-color: var(--primary-color);
+            background-color: var(--dark-color);
         }
 
         /* Footer */
         footer {
-            background-color: var(--dark-color);
-            color: var(--light-text);
+            background-color: white;
+            color: var(--text-color);
             padding: 3rem 0 1.5rem;
             margin-top: 3rem;
+            border-top: 3px solid var(--secondary-color);
         }
 
         .footer-content {
@@ -336,7 +346,7 @@
         .footer-column h4 {
             font-size: 1.3rem;
             margin-bottom: 1.5rem;
-            color: var(--light-color);
+            color: var(--dark-color);
             position: relative;
             padding-bottom: 0.5rem;
         }
@@ -348,7 +358,7 @@
             right: 0;
             width: 50px;
             height: 2px;
-            background-color: var(--light-color);
+            background-color: var(--primary-color);
         }
 
         .footer-links {
@@ -360,13 +370,13 @@
         }
 
         .footer-links a {
-            color: #ddd;
+            color: #666;
             text-decoration: none;
             transition: color 0.3s;
         }
 
         .footer-links a:hover {
-            color: var(--light-color);
+            color: var(--primary-color);
             padding-right: 5px;
         }
 
@@ -383,7 +393,7 @@
         }
 
         .contact-item i {
-            color: var(--light-color);
+            color: var(--primary-color);
             font-size: 1.2rem;
         }
 
@@ -399,29 +409,30 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: var(--light-color);
             border-radius: 50%;
-            color: white;
+            color: var(--dark-color);
             transition: all 0.3s;
         }
 
         .social-icons a:hover {
             background-color: var(--primary-color);
+            color: white;
             transform: translateY(-5px);
         }
 
         .copyright {
             text-align: center;
             padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #aaa;
+            border-top: 1px solid var(--light-color);
+            color: #888;
             font-size: 0.9rem;
         }
 
         /* Responsive Design */
         @media (max-width: 992px) {
             .hero h2 {
-                font-size: 2.5rem;
+                font-size: 2.3rem;
             }
             
             .products-grid {
@@ -447,10 +458,11 @@
                 position: absolute;
                 top: 100%;
                 right: 0;
-                background-color: var(--dark-color);
+                background-color: white;
                 width: 100%;
                 padding: 1rem;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                border-top: 2px solid var(--light-color);
             }
             
             .mobile-menu.active {
@@ -463,7 +475,7 @@
             }
             
             .hero h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             .hero p {
@@ -473,15 +485,23 @@
             .main-content {
                 flex-direction: column;
             }
+            
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .logo-img {
+                height: 50px;
+            }
         }
 
         @media (max-width: 576px) {
             .hero {
-                padding: 3rem 0;
+                padding: 2rem 0;
             }
             
             .hero h2 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
             
             .section-title {
@@ -491,6 +511,14 @@
             .products-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .logo h1 {
+                font-size: 1.3rem;
+            }
+            
+            .logo-img {
+                height: 45px;
+            }
         }
     </style>
 </head>
@@ -499,8 +527,9 @@
     <header>
         <div class="container header-content">
             <div class="logo">
-                <i class="fas fa-coffee"></i>
-                <h1>كافيه <span>الرفاهية</span></h1>
+                <!-- هنا ضع اللوجو الخاص بك -->
+                <img src="PicsArt_12-02-08.23.58.jpg" alt="لوجو Flower Cafe" class="logo-img">
+                <h1>Flower <span>Cafe</span></h1>
             </div>
             
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -510,8 +539,8 @@
             <nav class="desktop-menu">
                 <ul>
                     <li><a href="#home">الرئيسية</a></li>
-                    <li><a href="#about">عن الكافيه</a></li>
                     <li><a href="#menu">قائمة الطعام</a></li>
+                    <li><a href="#about">عن الكافيه</a></li>
                     <li><a href="#contact">اتصل بنا</a></li>
                 </ul>
             </nav>
@@ -519,8 +548,8 @@
             <div class="mobile-menu" id="mobileMenu">
                 <ul>
                     <li><a href="#home">الرئيسية</a></li>
-                    <li><a href="#about">عن الكافيه</a></li>
                     <li><a href="#menu">قائمة الطعام</a></li>
+                    <li><a href="#about">عن الكافيه</a></li>
                     <li><a href="#contact">اتصل بنا</a></li>
                 </ul>
             </div>
@@ -530,8 +559,8 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <h2>استمتع بأفضل المشروبات والحلويات</h2>
-            <p>كافيه الرفاهية يقدم لكم أجود أنواع القهوة والمشروبات الساخنة والباردة بالإضافة إلى تشكيلة متنوعة من الحلويات في أجواء مريحة وأنيقة.</p>
+            <h2>مرحبًا بكم في Flower Cafe</h2>
+            <p>مكان يجمع بين جمال الزهور وروعة المشروبات. استمتع بأجواء هادئة ومشروبات مميزة في كافينا الذي يحمل عطر الأزهار.</p>
             <a href="#menu" class="cta-button">استعرض قائمتنا <i class="fas fa-arrow-left"></i></a>
         </div>
     </section>
@@ -558,10 +587,22 @@
                 <h3 class="section-title"><i class="fas fa-fire"></i> المشروبات الساخنة</h3>
                 <div class="products-grid">
                     <div class="product-card">
-                        <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="product-img" style="background-color: #FFE4E1;"></div>
                         <div class="product-content">
-                            <h4 class="product-title">إسبريسو</h4>
-                            <p class="product-desc">قهوة إيطالية مركزة وغنية تعتبر أساس العديد من المشروبات الأخرى.</p>
+                            <h4 class="product-title">قهوة زهرية</h4>
+                            <p class="product-desc">قهوة عربية مع نكهات زهرية خفيفة.</p>
+                            <div class="product-footer">
+                                <span class="price">18 ج.م</span>
+                                <button class="add-to-cart">أضف للسلة</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img" style="background-color: #FFF0F5;"></div>
+                        <div class="product-content">
+                            <h4 class="product-title">شاي الياسمين</h4>
+                            <p class="product-desc">شاي أخضر مع عطر أزهار الياسمين.</p>
                             <div class="product-footer">
                                 <span class="price">15 ج.م</span>
                                 <button class="add-to-cart">أضف للسلة</button>
@@ -570,36 +611,24 @@
                     </div>
                     
                     <div class="product-card">
-                        <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="product-img" style="background-color: #FFE4E1;"></div>
                         <div class="product-content">
-                            <h4 class="product-title">كابتشينو</h4>
-                            <p class="product-desc">مزيج رائع من الإسبريسو والحليب المبخر مع رغوة الحليب.</p>
+                            <h4 class="product-title">كابتشينو الورد</h4>
+                            <p class="product-desc">كابتشينو بنكهة الورد مع رغوة ناعمة.</p>
+                            <div class="product-footer">
+                                <span class="price">22 ج.م</span>
+                                <button class="add-to-cart">أضف للسلة</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img" style="background-color: #FFF0F5;"></div>
+                        <div class="product-content">
+                            <h4 class="product-title">شوكولاتة باللافندر</h4>
+                            <p class="product-desc">شوكولاتة ساخنة مع نكهة اللافندر.</p>
                             <div class="product-footer">
                                 <span class="price">20 ج.م</span>
-                                <button class="add-to-cart">أضف للسلة</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                        <div class="product-content">
-                            <h4 class="product-title">شاي أخضر</h4>
-                            <p class="product-desc">شاي أخضر عالي الجودة مع نكهات طبيعية من الأعشاب.</p>
-                            <div class="product-footer">
-                                <span class="price">12 ج.م</span>
-                                <button class="add-to-cart">أضف للسلة</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1561047029-3000c68339ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                        <div class="product-content">
-                            <h4 class="product-title">شوكولاتة ساخنة</h4>
-                            <p class="product-desc">شوكولاتة غنية وساخنة مع رشة من الكريمة المخفوقة.</p>
-                            <div class="product-footer">
-                                <span class="price">18 ج.م</span>
                                 <button class="add-to-cart">أضف للسلة</button>
                             </div>
                         </div>
@@ -612,10 +641,10 @@
                 <h3 class="section-title"><i class="fas fa-wind"></i> المشروبات الباردة</h3>
                 <div class="products-grid">
                     <div class="product-card">
-                        <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="product-img" style="background-color: #FFF0F5;"></div>
                         <div class="product-content">
                             <h4 class="product-title">ليمون بالنعناع</h4>
-                            <p class="product-desc">عصير ليمون منعش مع أوراق النعناع الطازج.</p>
+                            <p class="product-desc">عصير ليمون منعش مع أوراق النعناع.</p>
                             <div class="product-footer">
                                 <span class="price">16 ج.م</span>
                                 <button class="add-to-cart">أضف للسلة</button>
@@ -624,13 +653,10 @@
                     </div>
                     
                     <div class="product-card">
-                        <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1437418747212-8d9709afab22?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="product-img" style="background-color: #FFE4E1;"></div>
                         <div class="product-content">
-                            <h4 class="product-title">عصير برتقال طازج</h4>
-                            <p class="product-desc">عصير برتقال طازج مع قطع فواكه متنوعة.</p>
+                            <h4 class="product-title">عصير فراولة وزهور</h4>
+                            <p class="product-desc">عصير فراولة طازج مع نكهات زهرية.</p>
                             <div class="product-footer">
-                                <span class="price">18 ج.م</span>
-                                <button class="add-to-cart">أضف للسلة</button>
-                            </div>
-                        </div>
-       
+                                <span class="price">20 ج.م</span>
+                          
