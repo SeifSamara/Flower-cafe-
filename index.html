@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كافيه الرفاهية - Café Delight</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #D2691E;
+            --light-color: #F5DEB3;
+            --dark-color: #3E2723;
+            --accent-color: #A0522D;
+            --text-color: #333;
+            --light-text: #fff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: #f9f5f0;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--dark-color);
+            color: var(--light-text);
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+            color: var(--light-color);
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--light-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--light-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background-color: var(--light-color);
+            bottom: 0;
+            right: 0;
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(62, 39, 35, 0.8), rgba(62, 39, 35, 0.9)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-text);
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--light-color);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid var(--primary-color);
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            border-color: var(--light-color);
+        }
+
+        /* Main Content Layout */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        /* Sidebar (Categories) */
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: fit-content;
+        }
+
+        .sidebar h3 {
+            color: var(--dark-color);
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--light-color);
+            font-size: 1.5rem;
+        }
+
+        .categories {
+            list-style: none;
+        }
+
+        .categories li {
+            margin-bottom: 0.8rem;
+        }
+
+        .categories a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 0.8rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .categories a:hover {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            transform: translateX(-5px);
+        }
+
+        .categories a.active {
+            background-color: var(--dark-color);
+            color: white;
+        }
+
+        .categories i {
+            font-size: 1.2rem;
+            width: 25px;
+        }
+
+        /* Products Grid */
+        .products-section {
+            flex: 3;
+            min-width: 300px;
+        }
+
+        .section-title {
+            color: var(--dark-color);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--light-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: var(--primary-color);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-img {
+            height: 180px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product-content {
+            padding: 1.2rem;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+
+        .product-desc {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .add-to-cart {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-text);
+            padding: 3rem 0 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-column h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--light-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--light-color);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--light-color);
+            padding-right: 5px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-item i {
+            color: var(--light-color);
+            font-size: 1.2rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .header-content {
+                position: relative;
+            }
+            
+            .mobile-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background-color: var(--dark-color);
+                width: 100%;
+                padding: 1rem;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            }
+            
+            .mobile-menu.active {
+                display: block;
+            }
+            
+            .mobile-menu ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .main-content {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 3rem 0;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-coffee"></i>
+                <h1>كافيه <span>الرفاهية</span></h1>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="desktop-menu">
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#about">عن الكافيه</a></li>
+                    <li><a href="#menu">قائمة الطعام</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            
+            <div class="mobile-menu" id="mobileMenu">
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#about">عن الكافيه</a></li>
+                    <li><a href="#menu">قائمة الطعام</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>استمتع بأفضل المشروبات والحلويات</h2>
+            <p>كافيه الرفاهية يقدم لكم أجود أنواع القهوة والمشروبات الساخنة والباردة بالإضافة إلى تشكيلة متنوعة من الحلويات في أجواء مريحة وأنيقة.</p>
+            <a href="#menu" class="cta-button">استعرض قائمتنا <i class="fas fa-arrow-left"></i></a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container main-content">
+        <!-- Sidebar Categories -->
+        <aside class="sidebar">
+            <h3><i class="fas fa-list"></i> أقسام المنتجات</h3>
+            <ul class="categories">
+                <li><a href="#hot-drinks" class="active"><i class="fas fa-mug-hot"></i> المشروبات الساخنة</a></li>
+                <li><a href="#cold-drinks"><i class="fas fa-glass-whiskey"></i> المشروبات الباردة</a></li>
+                <li><a href="#ice-coffee"><i class="fas fa-snowflake"></i> الآيس كوفي</a></li>
+                <li><a href="#desserts"><i class="fas fa-ice-cream"></i> الديزرت والحلويات</a></li>
+            </ul>
+        </aside>
+
+        <!-- Products Section -->
+        <main class="products-section" id="menu">
+            <h2 class="section-title"><i class="fas fa-utensils"></i> قائمة منتجاتنا</h2>
+            
+            <!-- Hot Drinks Section -->
+            <section id="hot-drinks">
+                <h3 class="section-title"><i class="fas fa-fire"></i> المشروبات الساخنة</h3>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="product-content">
+                            <h4 class="product-title">إسبريسو</h4>
+                            <p class="product-desc">قهوة إيطالية مركزة وغنية تعتبر أساس العديد من المشروبات الأخرى.</p>
+                            <div class="product-footer">
+                                <span class="price">15 ج.م</span>
+                                <button class="add-to-cart">أضف للسلة</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="product-content">
+                            <h4 class="product-title">كابتشينو</h4>
+                            <p class="product-desc">مزيج رائع من الإسبريسو والحليب المبخر مع رغوة الحليب.</p>
+                            <div class="product-footer">
+                                <span class="price">20 ج.م</span>
+                                <button class="add-to-cart">أضف للسلة</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="product-content">
+                            <h4 class="product-title">شاي أخضر</h4>
+                            <p class="product-desc">شاي أخضر عالي الجودة مع نكهات طبيعية من الأعشاب.</p>
+                            <div class="product-footer">
+                                <span class="price">12 ج.م</span>
+                                <button class="add-to-cart">أضف للسلة</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1561047029-3000c68339ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="product-content">
+                            <h4 class="product-title">شوكولاتة ساخنة</h4>
+                            <p class="product-desc">شوكولاتة غنية وساخنة مع رشة من الكريمة المخفوقة.</p>
+                            <div class="product-footer">
+                                <span class="price">18 ج.م</span>
+                                <button class="add-to-cart">أضف للسلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Cold Drinks Section -->
+            <section id="cold-drinks">
+                <h3 class="section-title"><i class="fas fa-wind"></i> المشروبات الباردة</h3>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="product-content">
+                            <h4 class="product-title">ليمون بالنعناع</h4>
+                            <p class="product-desc">عصير ليمون منعش مع أوراق النعناع الطازج.</p>
+                            <div class="product-footer">
+                                <span class="price">16 ج.م</span>
+                                <button class="add-to-cart">أضف للسلة</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1437418747212-8d9709afab22?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="product-content">
+                            <h4 class="product-title">عصير برتقال طازج</h4>
+                            <p class="product-desc">عصير برتقال طازج مع قطع فواكه متنوعة.</p>
+                            <div class="product-footer">
+                                <span class="price">18 ج.م</span>
+                                <button class="add-to-cart">أضف للسلة</button>
+                            </div>
+                        </div>
+       
