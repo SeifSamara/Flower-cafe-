@@ -184,6 +184,39 @@
             color: var(--primary-color);
         }
 
+        /* Contact Info in Sidebar */
+        .contact-sidebar {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--light-color);
+        }
+
+        .contact-sidebar h3 {
+            color: var(--dark-color);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .contact-item-sidebar {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 1.2rem;
+            color: #555;
+        }
+
+        .contact-item-sidebar i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        .contact-item-sidebar span {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
         /* Hero Section - اللوجو مع التعريف */
         .hero {
             padding: 4rem 0;
@@ -570,6 +603,23 @@
                 <i class="fas fa-ice-cream"></i> Desserts
             </a></li>
         </ul>
+        
+        <!-- Contact Us Section in Sidebar -->
+        <div class="contact-sidebar">
+            <h3>Contact Us</h3>
+            <div class="contact-item-sidebar">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>ميدان المساحة، الدقي، الجيزة</span>
+            </div>
+            <div class="contact-item-sidebar">
+                <i class="fas fa-phone"></i>
+                <span>01159091597</span>
+            </div>
+            <div class="contact-item-sidebar">
+                <i class="fas fa-envelope"></i>
+                <span>info@flowercoffee.com</span>
+            </div>
+        </div>
     </div>
 
     <!-- Overlay when sidebar is open -->
@@ -672,4 +722,353 @@
     <section class="products-section" id="cold-drinks-section">
         <div class="container">
             <h2 class="section-title">Cold Drinks</h2>
-      
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-glass-whiskey"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Iced Floral Lemonade</h3>
+                        <p class="product-desc">Refreshing lemonade with floral hints and fresh mint leaves.</p>
+                        <div class="product-footer">
+                            <span class="price">$4.50</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-glass-whiskey"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Berry Blast Smoothie</h3>
+                        <p class="product-desc">Mixed berry smoothie with yogurt and honey.</p>
+                        <div class="product-footer">
+                            <span class="price">$5.50</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-glass-whiskey"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Tropical Iced Tea</h3>
+                        <p class="product-desc">Iced tea with tropical fruit flavors and a hint of passionfruit.</p>
+                        <div class="product-footer">
+                            <span class="price">$4.25</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-glass-whiskey"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Vanilla Milkshake</h3>
+                        <p class="product-desc">Creamy vanilla milkshake with whipped cream and sprinkles.</p>
+                        <div class="product-footer">
+                            <span class="price">$5.00</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ice Coffee Section -->
+    <section class="products-section" id="ice-coffee-section">
+        <div class="container">
+            <h2 class="section-title">Ice Coffee</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Classic Iced Coffee</h3>
+                        <p class="product-desc">Chilled coffee served with ice and your choice of milk.</p>
+                        <div class="product-footer">
+                            <span class="price">$4.75</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Caramel Iced Latte</h3>
+                        <p class="product-desc">Iced latte with rich caramel syrup and cold milk.</p>
+                        <div class="product-footer">
+                            <span class="price">$5.50</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Vanilla Iced Coffee</h3>
+                        <p class="product-desc">Smooth iced coffee with vanilla flavor and cream.</p>
+                        <div class="product-footer">
+                            <span class="price">$5.25</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Mocha Frappé</h3>
+                        <p class="product-desc">Blended coffee drink with chocolate and whipped cream.</p>
+                        <div class="product-footer">
+                            <span class="price">$6.00</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Floral Iced Coffee</h3>
+                        <p class="product-desc">Special iced coffee with delicate floral aroma.</p>
+                        <div class="product-footer">
+                            <span class="price">$5.75</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desserts Section -->
+    <section class="products-section" id="desserts-section">
+        <div class="container">
+            <h2 class="section-title">Desserts</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-ice-cream"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Rose Cheesecake</h3>
+                        <p class="product-desc">Creamy cheesecake with rose petal garnish.</p>
+                        <div class="product-footer">
+                            <span class="price">$6.50</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-ice-cream"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Lavender Cupcake</h3>
+                        <p class="product-desc">Moist cupcake with lavender frosting and edible flowers.</p>
+                        <div class="product-footer">
+                            <span class="price">$4.50</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-ice-cream"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Chocolate Bloom</h3>
+                        <p class="product-desc">Rich chocolate cake with floral decoration.</p>
+                        <div class="product-footer">
+                            <span class="price">$7.00</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-ice-cream"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Fruit Tart</h3>
+                        <p class="product-desc">Buttery tart filled with pastry cream and fresh fruits.</p>
+                        <div class="product-footer">
+                            <span class="price">$5.75</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>About Flower Cafe</h4>
+                    <p>A unique cafe experience where floral beauty meets exceptional coffee. We're dedicated to providing the highest quality beverages in a welcoming atmosphere.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>ميدان المساحة، الدقي، الجيزة</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>01159091597</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@flowercoffee.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>9:00 AM - 12:00 AM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Flower Cafe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sidebar Functionality
+        const openSidebarBtn = document.getElementById('openSidebar');
+        const closeSidebarBtn = document.getElementById('closeSidebar');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        const categoryLinks = document.querySelectorAll('.category-link');
+        const productSections = document.querySelectorAll('.products-section');
+
+        // Open Sidebar
+        openSidebarBtn.addEventListener('click', () => {
+            sidebar.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Close Sidebar
+        closeSidebarBtn.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar);
+
+        function closeSidebar() {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Category Selection
+        categoryLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const category = this.getAttribute('data-category');
+                
+                // Remove active class from all links
+                categoryLinks.forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Hide all product sections
+                productSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Show selected category section
+                const targetSection = document.getElementById(`${category}-section`);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                    
+                    // Scroll to the section
+                    setTimeout(() => {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }, 300);
+                }
+                
+                // Close sidebar
+                closeSidebar();
+            });
+        });
+
+        // Add to Cart Functionality
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const productTitle = this.closest('.product-card').querySelector('.product-title').textContent;
+                const productPrice = this.closest('.product-card').querySelector('.price').textContent;
+                
+                // Change button text temporarily
+                const originalText = this.textContent;
+                this.textContent = 'Added!';
+                this.style.backgroundColor = '#C71585';
+                
+                setTimeout(() => {
+                    this.textContent = originalText;
+                    this.style.backgroundColor = '';
+                }, 1500);
+                
+                // Log to console (can be replaced with actual cart functionality)
+                console.log(`Added ${productTitle} for ${productPrice} to cart`);
+            });
+        });
+
+        // Show first category by default (Hot Drinks)
+        document.addEventListener('DOMContentLoaded', () => {
+            const firstSection = document.getElementById('hot-drinks-section');
+            if (firstSection) {
+                firstSection.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
